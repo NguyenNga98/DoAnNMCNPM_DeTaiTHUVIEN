@@ -21,7 +21,7 @@
 
 4. Ngôn ngữ và công nghệ được dùng: 
  - C#winform
- -SQL
+ - SQL
   
 5. Công cụ được sử dụng:
  - Visual Studio
