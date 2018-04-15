@@ -2,11 +2,11 @@
 1. Đề tài: QUẢN LÝ THƯ VIỆN
 
 2. Giới thiệu nhóm: 
-Tên nhóm: NTMT
-Thành viên: Nguyễn Thị Nga, Phạm Thanh Trúc, Trần Lê Minh, Vũ Văn Tiến
+-Tên nhóm: NTMT
+-Thành viên: Nguyễn Thị Nga, Phạm Thanh Trúc, Trần Lê Minh, Vũ Văn Tiến
 
 3. Mô tả phần mềm: Phần mềm được thiết kế để thực hiện những nghiệp vụ thư viện một cách đơn giản, thuận tiện và đáp ứng được yêu cầu công việc của người quản lý cũng như độc giả tại thư viện.
-  + Các chức năng của phần mềm:
+ Các chức năng của phần mềm:
    - Lập thẻ độc giả
    - Gia hạn thẻ độc giả
    - Thêm sách mới
@@ -20,10 +20,10 @@ Thành viên: Nguyễn Thị Nga, Phạm Thanh Trúc, Trần Lê Minh, Vũ Văn 
    - Thống kê tất cả các phiếu mượn trong năm
 
 4. Ngôn ngữ và công nghệ được dùng: 
-  C#winform
-  SQL
+ - C#winform
+  -SQL
   
 5. Công cụ được sử dụng:
-  Visual Studio
-  SQL Server
+ - Visual Studio
+ - SQL Server
   
