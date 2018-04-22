@@ -16,7 +16,7 @@
    - Mượn sách
    - Trả sách
    - Nộp phạt
-   - Tra cứu sách
+   - Tra cứu sách
    - Tra cứu độc giả
    - Thống kê tình hình mượn sách theo thể loại
    - Thống kê sách trả muộn
