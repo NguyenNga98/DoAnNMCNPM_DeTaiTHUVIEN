@@ -10,6 +10,7 @@
         <table class="table table-condensed table-hover table-striped" style="border-top:solid 1px black">
             <thead style="color: green">
             <tr>
+                <th>Id</th>
                 <th>Họ Tên</th>
                 <th>Năm sinh</th>
                 <th>Địa chỉ</th>
@@ -20,19 +21,26 @@
             </tr>
             </thead>
             <tbody>
+        
             @foreach (var item in Model)
             {
                 <tr>
+                    <td>@item.Id</td>
                     <td >@item.HoTen</td>
                     <td >@item.NgaySinh</td>
                     <td >@item.DiaChi</td>
                     <td >@item.Email</td>
-                    <td >@item.LoaiDocGiaId</td>
+                    <td >@item.LoaiDocGia.TenLoaiDocGia</td>
                     <td >@item.NgayLapThe</td>
                     <td >@item.NgayHetHan</td>
+                    <td>
+                        <i class="glyphicon glyphicon-edit"></i>
+                        |
+                        <i class="fa fa-trash"></i>
+                    </td>
                 </tr>
             }
-            
+
             </tbody>
         </table>
     </div>

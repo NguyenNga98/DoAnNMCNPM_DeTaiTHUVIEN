@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using Microsoft.EntityFrameworkCore;
 using OA.Data;
@@ -66,6 +67,13 @@ namespace OA.Repository
             entities.Remove(entity);
         }
 
+        public IQueryable<T> Include(params Expression<Func<T, object>>[] includeProperties)
+        {
+            var query = entities.AsNoTracking();
+            foreach (var includeProperty in includeProperties)
+                query = query.Include(includeProperty);
+            return query;
+        }
         public void SaveChanges()
         {
             _context.SaveChanges();

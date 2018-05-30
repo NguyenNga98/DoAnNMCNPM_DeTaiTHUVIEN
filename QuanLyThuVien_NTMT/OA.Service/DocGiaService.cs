@@ -26,7 +26,7 @@ namespace OA.Service
 
         public IEnumerable<DocGia> GetAll()
         {
-            return _repository.GetAll();
+            return _repository.Include(x => x.LoaiDocGia);
         }
 
         public DocGia GetUser(int id)

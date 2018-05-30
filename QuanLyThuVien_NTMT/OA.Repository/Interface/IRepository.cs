@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using OA.Data.Model;
 
@@ -14,5 +16,6 @@ namespace OA.Repository.Interface
         void Delete(T entity);
         void Remove(T entity);
         void SaveChanges();
+        IQueryable<T> Include(params Expression<Func<T, object>>[] includeProperties);
     }
 }
