@@ -13,7 +13,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.6 -->
     @*<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">*@
-    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
     <!-- Ionicons -->
@@ -25,7 +25,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           apply the skin class to the body tag so the changes take effect.
     -->
     <link rel="stylesheet" href="/dist/css/skins/skin-blue.min.css">
-
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -258,20 +258,21 @@ desired effect
                 <!-- /.search form -->
                 <!-- Sidebar Menu -->
                 <ul class="sidebar-menu">
-                    <li class="header">HEADER</li>
+                    <li class="header">QUẢN LÝ</li>
                     <!-- Optionally, you can add icons to the links -->
-                    <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
-                    <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
+                    @*<li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
+                    <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>*@
                     <li class="treeview">
                         <a href="#">
-                            <i class="fa fa-link"></i> <span>Multilevel</span>
+                            <i class="fa fa-link"></i> <span>Độc giả</span>
                             <span class="pull-right-container">
                                 <i class="fa fa-angle-left pull-right"></i>
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="#">Link in level 2</a></li>
-                            <li><a href="#">Link in level 2</a></li>
+                            <li><a href="/DocGia">Danh sách độc giả</a></li>
+                            <li><a href="/DocGia/Create">Thêm đọc giả</a></li>
+                            <li><a href="#">Thêm loại độc giả</a></li>
                         </ul>
                     </li>
                 </ul>

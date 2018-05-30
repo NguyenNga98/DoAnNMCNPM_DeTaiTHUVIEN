@@ -5208,11 +5208,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\CNPM\\QuanLyThuVien_NTMT\\OA.Repository\\OA.Repository.csproj",
+      "projectUniqueName": "C:\\Users\\tien.vu\\Desktop\\NMCNPM\\DoAnNMCNPM_DeTaiTHUVIEN\\QuanLyThuVien_NTMT\\OA.Repository\\OA.Repository.csproj",
       "projectName": "OA.Repository",
-      "projectPath": "D:\\CNPM\\QuanLyThuVien_NTMT\\OA.Repository\\OA.Repository.csproj",
+      "projectPath": "C:\\Users\\tien.vu\\Desktop\\NMCNPM\\DoAnNMCNPM_DeTaiTHUVIEN\\QuanLyThuVien_NTMT\\OA.Repository\\OA.Repository.csproj",
       "packagesPath": "C:\\Users\\tien.vu\\.nuget\\packages\\",
-      "outputPath": "D:\\CNPM\\QuanLyThuVien_NTMT\\OA.Repository\\obj\\",
+      "outputPath": "C:\\Users\\tien.vu\\Desktop\\NMCNPM\\DoAnNMCNPM_DeTaiTHUVIEN\\QuanLyThuVien_NTMT\\OA.Repository\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
@@ -5234,8 +5234,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "D:\\CNPM\\QuanLyThuVien_NTMT\\OA.Data\\OA.Data.csproj": {
-              "projectPath": "D:\\CNPM\\QuanLyThuVien_NTMT\\OA.Data\\OA.Data.csproj"
+            "C:\\Users\\tien.vu\\Desktop\\NMCNPM\\DoAnNMCNPM_DeTaiTHUVIEN\\QuanLyThuVien_NTMT\\OA.Data\\OA.Data.csproj": {
+              "projectPath": "C:\\Users\\tien.vu\\Desktop\\NMCNPM\\DoAnNMCNPM_DeTaiTHUVIEN\\QuanLyThuVien_NTMT\\OA.Data\\OA.Data.csproj"
             }
           }
         }

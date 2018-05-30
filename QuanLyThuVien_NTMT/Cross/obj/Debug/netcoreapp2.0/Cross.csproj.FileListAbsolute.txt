@@ -21,3 +21,15 @@ D:\CNPM\QuanLyThuVien_NTMT\Cross\obj\Debug\netcoreapp2.0\Cross.AssemblyInfo.cs
 D:\CNPM\QuanLyThuVien_NTMT\Cross\obj\Debug\netcoreapp2.0\Cross.csproj.CopyComplete
 D:\CNPM\QuanLyThuVien_NTMT\Cross\obj\Debug\netcoreapp2.0\Cross.dll
 D:\CNPM\QuanLyThuVien_NTMT\Cross\obj\Debug\netcoreapp2.0\Cross.pdb
+C:\Users\tien.vu\Desktop\NMCNPM\DoAnNMCNPM_DeTaiTHUVIEN\QuanLyThuVien_NTMT\Cross\bin\Debug\netcoreapp2.0\Cross.deps.json
+C:\Users\tien.vu\Desktop\NMCNPM\DoAnNMCNPM_DeTaiTHUVIEN\QuanLyThuVien_NTMT\Cross\bin\Debug\netcoreapp2.0\Cross.dll
+C:\Users\tien.vu\Desktop\NMCNPM\DoAnNMCNPM_DeTaiTHUVIEN\QuanLyThuVien_NTMT\Cross\bin\Debug\netcoreapp2.0\Cross.pdb
+C:\Users\tien.vu\Desktop\NMCNPM\DoAnNMCNPM_DeTaiTHUVIEN\QuanLyThuVien_NTMT\Cross\bin\Debug\netcoreapp2.0\OA.Data.dll
+C:\Users\tien.vu\Desktop\NMCNPM\DoAnNMCNPM_DeTaiTHUVIEN\QuanLyThuVien_NTMT\Cross\bin\Debug\netcoreapp2.0\OA.Data.pdb
+C:\Users\tien.vu\Desktop\NMCNPM\DoAnNMCNPM_DeTaiTHUVIEN\QuanLyThuVien_NTMT\Cross\obj\Debug\netcoreapp2.0\Cross.csprojResolveAssemblyReference.cache
+C:\Users\tien.vu\Desktop\NMCNPM\DoAnNMCNPM_DeTaiTHUVIEN\QuanLyThuVien_NTMT\Cross\obj\Debug\netcoreapp2.0\Cross.csproj.CoreCompileInputs.cache
+C:\Users\tien.vu\Desktop\NMCNPM\DoAnNMCNPM_DeTaiTHUVIEN\QuanLyThuVien_NTMT\Cross\obj\Debug\netcoreapp2.0\Cross.AssemblyInfoInputs.cache
+C:\Users\tien.vu\Desktop\NMCNPM\DoAnNMCNPM_DeTaiTHUVIEN\QuanLyThuVien_NTMT\Cross\obj\Debug\netcoreapp2.0\Cross.AssemblyInfo.cs
+C:\Users\tien.vu\Desktop\NMCNPM\DoAnNMCNPM_DeTaiTHUVIEN\QuanLyThuVien_NTMT\Cross\obj\Debug\netcoreapp2.0\Cross.csproj.CopyComplete
+C:\Users\tien.vu\Desktop\NMCNPM\DoAnNMCNPM_DeTaiTHUVIEN\QuanLyThuVien_NTMT\Cross\obj\Debug\netcoreapp2.0\Cross.dll
+C:\Users\tien.vu\Desktop\NMCNPM\DoAnNMCNPM_DeTaiTHUVIEN\QuanLyThuVien_NTMT\Cross\obj\Debug\netcoreapp2.0\Cross.pdb

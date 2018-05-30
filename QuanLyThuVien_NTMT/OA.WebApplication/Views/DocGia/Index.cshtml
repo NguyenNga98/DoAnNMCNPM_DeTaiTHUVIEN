@@ -1,8 +1,40 @@
-﻿
+﻿@model IEnumerable<OA.Data.Model.DocGia>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_myLayout.cshtml";
 }
-
-<h2>Index</h2>
+@*<link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet" />*@
+<h2>Danh sách độc giả</h2>
+<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <table class="table table-condensed table-hover table-striped" style="border-top:solid 1px black">
+            <thead style="color: green">
+            <tr>
+                <th>Họ Tên</th>
+                <th>Năm sinh</th>
+                <th>Địa chỉ</th>
+                <th>Email</th>
+                <th>Loại độc giả</th>
+                <th>Ngày lập thẻ</th>
+                <th>Ngày hết hạn</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td >@item.HoTen</td>
+                    <td >@item.NgaySinh</td>
+                    <td >@item.DiaChi</td>
+                    <td >@item.Email</td>
+                    <td >@item.LoaiDocGiaId</td>
+                    <td >@item.NgayLapThe</td>
+                    <td >@item.NgayHetHan</td>
+                </tr>
+            }
+            
+            </tbody>
+        </table>
+    </div>
+</div>
 

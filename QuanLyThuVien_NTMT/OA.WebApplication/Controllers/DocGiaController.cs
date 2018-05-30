@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Cross.ViewModel;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using OA.Data.Model;
 using OA.Service.Interface;
 
@@ -12,16 +8,20 @@ namespace OA.WebApplication.Controllers
     public class DocGiaController : Controller
     {
         private readonly IDocGiaService _docGiaService;
-        public DocGiaController(IDocGiaService docGiaService)
+        private readonly ILoaiDocGiaService _loaiDocGiaService;
+        public DocGiaController(IDocGiaService docGiaService, ILoaiDocGiaService loaiDocGiaService)
         {
             _docGiaService = docGiaService;
+            _loaiDocGiaService = loaiDocGiaService;
         }
         public IActionResult Index()
         {
-            return View();
+            var listDocGia = _docGiaService.GetAll();
+            return View(listDocGia);
         }
         public IActionResult Create()
         {
+            ViewData["LoaiDocGiaId"] = new SelectList(_loaiDocGiaService.GetAll(), "Id", "TenLoaiDocGia");
             return View();
         }
         [HttpPost]

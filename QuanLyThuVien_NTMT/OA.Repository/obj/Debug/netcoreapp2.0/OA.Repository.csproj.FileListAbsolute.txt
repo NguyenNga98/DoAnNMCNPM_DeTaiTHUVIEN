@@ -21,3 +21,15 @@ D:\CNPM\QuanLyThuVien_NTMT\OA.Repository\obj\Debug\netcoreapp2.0\OA.Repository.A
 D:\CNPM\QuanLyThuVien_NTMT\OA.Repository\obj\Debug\netcoreapp2.0\OA.Repository.csproj.CopyComplete
 D:\CNPM\QuanLyThuVien_NTMT\OA.Repository\obj\Debug\netcoreapp2.0\OA.Repository.dll
 D:\CNPM\QuanLyThuVien_NTMT\OA.Repository\obj\Debug\netcoreapp2.0\OA.Repository.pdb
+C:\Users\tien.vu\Desktop\NMCNPM\DoAnNMCNPM_DeTaiTHUVIEN\QuanLyThuVien_NTMT\OA.Repository\bin\Debug\netcoreapp2.0\OA.Repository.deps.json
+C:\Users\tien.vu\Desktop\NMCNPM\DoAnNMCNPM_DeTaiTHUVIEN\QuanLyThuVien_NTMT\OA.Repository\bin\Debug\netcoreapp2.0\OA.Repository.dll
+C:\Users\tien.vu\Desktop\NMCNPM\DoAnNMCNPM_DeTaiTHUVIEN\QuanLyThuVien_NTMT\OA.Repository\bin\Debug\netcoreapp2.0\OA.Repository.pdb
+C:\Users\tien.vu\Desktop\NMCNPM\DoAnNMCNPM_DeTaiTHUVIEN\QuanLyThuVien_NTMT\OA.Repository\bin\Debug\netcoreapp2.0\OA.Data.dll
+C:\Users\tien.vu\Desktop\NMCNPM\DoAnNMCNPM_DeTaiTHUVIEN\QuanLyThuVien_NTMT\OA.Repository\bin\Debug\netcoreapp2.0\OA.Data.pdb
+C:\Users\tien.vu\Desktop\NMCNPM\DoAnNMCNPM_DeTaiTHUVIEN\QuanLyThuVien_NTMT\OA.Repository\obj\Debug\netcoreapp2.0\OA.Repository.csprojResolveAssemblyReference.cache
+C:\Users\tien.vu\Desktop\NMCNPM\DoAnNMCNPM_DeTaiTHUVIEN\QuanLyThuVien_NTMT\OA.Repository\obj\Debug\netcoreapp2.0\OA.Repository.csproj.CoreCompileInputs.cache
+C:\Users\tien.vu\Desktop\NMCNPM\DoAnNMCNPM_DeTaiTHUVIEN\QuanLyThuVien_NTMT\OA.Repository\obj\Debug\netcoreapp2.0\OA.Repository.AssemblyInfoInputs.cache
+C:\Users\tien.vu\Desktop\NMCNPM\DoAnNMCNPM_DeTaiTHUVIEN\QuanLyThuVien_NTMT\OA.Repository\obj\Debug\netcoreapp2.0\OA.Repository.AssemblyInfo.cs
+C:\Users\tien.vu\Desktop\NMCNPM\DoAnNMCNPM_DeTaiTHUVIEN\QuanLyThuVien_NTMT\OA.Repository\obj\Debug\netcoreapp2.0\OA.Repository.csproj.CopyComplete
+C:\Users\tien.vu\Desktop\NMCNPM\DoAnNMCNPM_DeTaiTHUVIEN\QuanLyThuVien_NTMT\OA.Repository\obj\Debug\netcoreapp2.0\OA.Repository.dll
+C:\Users\tien.vu\Desktop\NMCNPM\DoAnNMCNPM_DeTaiTHUVIEN\QuanLyThuVien_NTMT\OA.Repository\obj\Debug\netcoreapp2.0\OA.Repository.pdb
