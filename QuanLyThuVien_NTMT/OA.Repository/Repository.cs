@@ -78,5 +78,10 @@ namespace OA.Repository
         {
             _context.SaveChanges();
         }
+
+        public T GetSingle()
+        {
+            return entities.FirstOrDefault();
+        }
     }
 }

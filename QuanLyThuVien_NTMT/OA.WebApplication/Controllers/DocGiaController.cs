@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using Cross.ViewModel;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using OA.Data.Model;
 using OA.Service.Interface;
@@ -25,12 +27,22 @@ namespace OA.WebApplication.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult Create(DocGia model)
+        public IActionResult Create(CreateDocGiaModel model)
         {
+           
             if(ModelState.IsValid)
             {
-                _docGiaService.InsertDocGia(model);
-                return Redirect("Index");
+                int tuoi = DateTime.Now.Year - model.NgaySinh.Year;
+                bool checkTuoi = _docGiaService.CheckQuyDinh(tuoi);
+                if (checkTuoi)
+                {
+                    _docGiaService.InsertDocGia(model);
+                    return Redirect("Index");
+                }
+                else
+                {
+                    ModelState.AddModelError("","Tuổi không hợp lệ");
+                }
             }
             return View(model);
         }

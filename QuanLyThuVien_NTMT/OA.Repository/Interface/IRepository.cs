@@ -17,5 +17,6 @@ namespace OA.Repository.Interface
         void Remove(T entity);
         void SaveChanges();
         IQueryable<T> Include(params Expression<Func<T, object>>[] includeProperties);
+        T GetSingle();
     }
 }
