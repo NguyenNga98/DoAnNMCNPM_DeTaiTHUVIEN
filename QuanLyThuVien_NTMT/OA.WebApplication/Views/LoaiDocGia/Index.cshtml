@@ -1,0 +1,36 @@
+﻿@model IEnumerable<OA.Data.Model.LoaiDocGia>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_myLayout.cshtml";
+}
+<h2>Danh sách loại độc giả</h2>
+<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <table class="table table-condensed table-hover table-striped" style="border-top:solid 1px black">
+            <thead style="color: green">
+                <tr>
+                    <th>Id</th>
+                    <th>Tên loại độc giả</th>
+                   
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.TenLoaiDocGia</td>
+                        
+                        <td>
+                            <i class="glyphicon glyphicon-edit"></i>
+                            |
+                            <i class="fa fa-trash"></i>
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>
