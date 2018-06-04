@@ -39,6 +39,8 @@ namespace OA.Data.Migrations
 
                     b.Property<DateTime>("NgaySinh");
 
+                    b.Property<int>("SoSachDangMuon");
+
                     b.HasKey("Id");
 
                     b.HasIndex("LoaiDocGiaId");
@@ -65,7 +67,9 @@ namespace OA.Data.Migrations
 
                     b.Property<int>("DocGiaId");
 
-                    b.Property<DateTime>("NgayTra");
+                    b.Property<DateTime>("NgayMuon");
+
+                    b.Property<DateTime?>("NgayTra");
 
                     b.Property<int>("SachId");
 

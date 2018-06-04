@@ -5,6 +5,7 @@ using AutoMapper;
 using Cross.ViewModel;
 using Elect.Mapper.AutoMapper.ObjUtils;
 using OA.Data.Model;
+using OA.Repository;
 using OA.Repository.Interface;
 using OA.Service.Interface;
 
@@ -12,10 +13,10 @@ namespace OA.Service
 {
     public class DocGiaService : IDocGiaService
     {
-        private readonly IRepository<DocGia> _repository;
+        private readonly IDocGiaRepository _repository;
         private readonly IRepository<QuyDinhDocGia> _quyDinhRepository;
         private readonly IMapper _mapper;
-        public DocGiaService(IRepository<DocGia> repository,IMapper mapper, IRepository<QuyDinhDocGia> quyDinhRepository)
+        public DocGiaService(IDocGiaRepository repository,IMapper mapper, IRepository<QuyDinhDocGia> quyDinhRepository)
         {
             _repository = repository;
             _mapper = mapper;
@@ -28,7 +29,7 @@ namespace OA.Service
 
         public IEnumerable<DocGia> GetAll()
         {
-            return _repository.Include(x => x.LoaiDocGia);
+            return _repository.ThenInclude();
         }
 
         public DocGia GetUser(int id)

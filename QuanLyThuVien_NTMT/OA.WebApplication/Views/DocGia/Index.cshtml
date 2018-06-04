@@ -18,6 +18,7 @@
                 <th>Loại độc giả</th>
                 <th>Ngày lập thẻ</th>
                 <th>Ngày hết hạn</th>
+                <th>Sách đang mượn</th>
             </tr>
             </thead>
             <tbody>
@@ -33,6 +34,12 @@
                     <td >@item.LoaiDocGia.TenLoaiDocGia</td>
                     <td >@item.NgayLapThe.ToShortDateString()</td>
                     <td >@item.NgayHetHan.ToShortDateString()</td>
+                    <td>
+                       @foreach (var i in item.MuonTraSachs)
+                       {
+                           @i.Sach.Tensach <br />
+                       }
+                    </td>
                     <td>
                         <i class="glyphicon glyphicon-edit"></i>
                         |

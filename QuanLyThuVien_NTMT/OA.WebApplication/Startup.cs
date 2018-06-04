@@ -35,8 +35,11 @@ namespace OA.WebApplication
             services.AddAutoMapper();
             //services.AddElectAutoMapper();
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+            services.AddTransient<IDocGiaRepository, DocGiaRepository>();
             services.AddTransient<IDocGiaService, DocGiaService>();
             services.AddTransient<ILoaiDocGiaService, LoaiDocGiaService>();
+            services.AddTransient<ITheLoaiService, TheLoaiService>();
+            services.AddTransient<ISachService, SachService>();
 
         }
 

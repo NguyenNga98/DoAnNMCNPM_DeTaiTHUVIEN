@@ -27,6 +27,7 @@ namespace OA.Data.Model
         public DateTime NgaySinh { get; set; }
         public DateTime NgayLapThe { get; set; }
         public DateTime NgayHetHan { get; set; }
+        public int SoSachDangMuon { get; set; }
         public int LoaiDocGiaId { get; set; }
         [ForeignKey("LoaiDocGiaId")]
         public LoaiDocGia LoaiDocGia { get; set; }

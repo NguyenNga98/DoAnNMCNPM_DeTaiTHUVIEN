@@ -11,7 +11,8 @@ namespace OA.Data.Model
     {
         public int DocGiaId { get; set; }
         public int SachId { get; set; }
-        public DateTime NgayTra { get; set; }
+        public DateTime NgayMuon { get; set; }
+        public DateTime? NgayTra { get; set; }
         public decimal? TienPhat { get; set; }
         [ForeignKey("DocGiaId")]
         public DocGia DocGia { get; set; }
