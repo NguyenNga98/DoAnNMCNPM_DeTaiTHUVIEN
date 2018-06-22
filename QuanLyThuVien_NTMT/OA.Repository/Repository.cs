@@ -83,5 +83,22 @@ namespace OA.Repository
         {
             return entities.FirstOrDefault();
         }
+        public virtual void Update(T entity, params Expression<Func<T, object>>[] changedProperties)
+        {
+
+            changedProperties = changedProperties?.Distinct().ToArray();
+
+            if (changedProperties?.Any() == true)
+            {
+                foreach (var property in changedProperties)
+                {
+                    _context.Entry(entity).Property(property).IsModified = true;
+                }
+            }
+            else
+                _context.Entry(entity).State = EntityState.Modified;
+            _context.SaveChanges();
+        }
     }
+
 }

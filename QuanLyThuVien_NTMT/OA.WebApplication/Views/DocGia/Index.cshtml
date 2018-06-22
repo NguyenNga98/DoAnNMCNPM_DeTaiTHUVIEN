@@ -4,52 +4,80 @@
     Layout = "~/Views/Shared/_myLayout.cshtml";
 }
 @*<link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet" />*@
-<h2>Danh sách độc giả</h2>
 <div class="row">
+    
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <table class="table table-condensed table-hover table-striped" style="border-top:solid 1px black">
-            <thead style="color: green">
-            <tr>
-                <th>Id</th>
-                <th>Họ Tên</th>
-                <th>Năm sinh</th>
-                <th>Địa chỉ</th>
-                <th>Email</th>
-                <th>Loại độc giả</th>
-                <th>Ngày lập thẻ</th>
-                <th>Ngày hết hạn</th>
-                <th>Sách đang mượn</th>
-            </tr>
-            </thead>
-            <tbody>
-        
-            @foreach (var item in Model)
-            {
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Danh sách độc giả</h3>
+                <div class="pull-right">
+                    <span class="clickable filter" data-toggle="tooltip" title="Toggle table filter" data-container="body">
+                        <i class="glyphicon glyphicon-filter"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="panel-body">
+                <input type="text" class="form-control" id="dev-table-filter" data-action="filter" data-filters="#dev-table" placeholder="Filter Developers" />
+            </div>
+            <table class="table table-hover" id="dev-table">
+                <thead style="color: green">
                 <tr>
-                    <td>@item.Id</td>
-                    <td >@item.HoTen</td>
-                    <td>@item.NgaySinh.ToShortDateString()</td>
-                    <td >@item.DiaChi</td>
-                    <td >@item.Email</td>
-                    <td >@item.LoaiDocGia.TenLoaiDocGia</td>
-                    <td >@item.NgayLapThe.ToShortDateString()</td>
-                    <td >@item.NgayHetHan.ToShortDateString()</td>
-                    <td>
-                       @foreach (var i in item.MuonTraSachs)
-                       {
-                           @i.Sach.Tensach <br />
-                       }
-                    </td>
-                    <td>
-                        <i class="glyphicon glyphicon-edit"></i>
-                        |
-                        <i class="fa fa-trash"></i>
-                    </td>
+                    <th>Mã độc giả</th>
+                    <th>Họ Tên</th>
+                    <th>Loại độc giả</th>
+                    <th>Ngày lập thẻ</th>
+                    <th>Ngày hết hạn</th>
+                    <th>Số sách đang mượn</th>
                 </tr>
-            }
+                </thead>
+                <tbody>
+        
+                @foreach (var item in Model)
+                {
+                    
+                    <tr>
+                        
+                    <td><a href="/DocGia/Detail/@item.Id">@item.Id</a></td>
+                            <td><a href="/DocGia/Detail/@item.Id">@item.HoTen</a></td>
+                           
+                            <td >@item.LoaiDocGia.TenLoaiDocGia</td>
+                            <td >@item.NgayLapThe.ToShortDateString()</td>
+                            <td >@item.NgayHetHan.ToShortDateString()</td>
+                        <td>@item.SoSachDangMuon</td>
+                        <td>
+                            <i>@Html.ActionLink("Trả sách", "Detail", "DocGia", new { id = @item.Id }) </i> |
+                            <i class="glyphicon glyphicon-edit"></i>
+                            |
+                            <i class="fa fa-trash"></i>
+                        </td>
+                       
+                    </tr>
+                }
 
-            </tbody>
-        </table>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
 
+
+<style>
+    .row{
+        margin-top:40px;
+        padding: 0 10px;
+    }
+    .clickable{
+        cursor: pointer;   
+    }
+
+    .panel-heading div {
+        margin-top: -18px;
+        font-size: 15px;
+    }
+    .panel-heading div span{
+        margin-left:5px;
+    }
+    .panel-body{
+        display: none;
+    }
+</style>

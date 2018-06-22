@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using AutoMapper;
-using Cross.ViewModel;
-using Elect.Mapper.AutoMapper.ObjUtils;
+﻿using Cross.ViewModel;
 using OA.Data.Model;
-using OA.Repository;
 using OA.Repository.Interface;
 using OA.Service.Interface;
+using System;
+using System.Collections.Generic;
 
 namespace OA.Service
 {
@@ -15,12 +11,12 @@ namespace OA.Service
     {
         private readonly IDocGiaRepository _repository;
         private readonly IRepository<QuyDinhDocGia> _quyDinhRepository;
-        private readonly IMapper _mapper;
-        public DocGiaService(IDocGiaRepository repository,IMapper mapper, IRepository<QuyDinhDocGia> quyDinhRepository)
+        private readonly IRepository<MuonTraSach> _muonTraSachRepository;
+        public DocGiaService(IDocGiaRepository repository, IRepository<QuyDinhDocGia> quyDinhRepository, IRepository<MuonTraSach> muonTraSachRepository)
         {
             _repository = repository;
-            _mapper = mapper;
             _quyDinhRepository = quyDinhRepository;
+            _muonTraSachRepository = muonTraSachRepository;
         }
         public void DeleteDocGia(int id)
         {
@@ -32,7 +28,7 @@ namespace OA.Service
             return _repository.ThenInclude();
         }
 
-        public DocGia GetUser(int id)
+        public DocGia GetDocGia(int id)
         {
             return _repository.Get(id);
         }
@@ -58,6 +54,14 @@ namespace OA.Service
             throw new NotImplementedException();
         }
 
+        public void TraSach(int id)
+        {
+            var muonTraSach = _muonTraSachRepository.Get(id);
+            var docGia = _repository.Get(muonTraSach.DocGiaId);
+            _muonTraSachRepository.Delete(muonTraSach);
+            docGia.SoSachDangMuon -= 1;
+            _repository.Update(docGia);
+        }
         public void EditQuyDinĐinhocGia(QuyDinhDocGia quyDinh)
         {
             _quyDinhRepository.Update(quyDinh);

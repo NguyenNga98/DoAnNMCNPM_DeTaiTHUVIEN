@@ -1,9 +1,9 @@
-﻿using System;
-using Cross.ViewModel;
+﻿using Cross.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using OA.Data.Model;
 using OA.Service.Interface;
+using System;
+using System.Linq;
 
 namespace OA.WebApplication.Controllers
 {
@@ -11,10 +11,12 @@ namespace OA.WebApplication.Controllers
     {
         private readonly IDocGiaService _docGiaService;
         private readonly ILoaiDocGiaService _loaiDocGiaService;
-        public DocGiaController(IDocGiaService docGiaService, ILoaiDocGiaService loaiDocGiaService)
+        private readonly ISachService _sachService;
+        public DocGiaController(IDocGiaService docGiaService, ILoaiDocGiaService loaiDocGiaService, ISachService sachService)
         {
             _docGiaService = docGiaService;
             _loaiDocGiaService = loaiDocGiaService;
+            _sachService = sachService;
         }
         public IActionResult Index()
         {
@@ -45,6 +47,33 @@ namespace OA.WebApplication.Controllers
                 }
             }
             return View(model);
+        }
+
+        public IActionResult Detail(int? id)
+        {
+            var listDocGia = _docGiaService.GetAll();
+            var docGia = listDocGia.FirstOrDefault(x => x.Id == id);
+            if (docGia == null)
+            {
+                return RedirectToAction("Index","Docgia");
+            }
+         //   var sach = docGia.MuonTraSachs.Single(x => x.SachId == sachId);
+            return View(docGia);
+        }
+        [HttpPost]
+        public IActionResult Detail(int id)
+        {
+            var a = _docGiaService.GetAll().Single(x => x.Id == id).MuonTraSachs;
+            foreach (var i in a)
+            {
+                _sachService.GetById(i.SachId);
+            }
+            ViewData["LoaiDocGiaId"] = new SelectList(a, "Id", "SachId");
+       //     var listDocGia = _docGiaService.GetAll();
+      
+            
+            //   var sach = docGia.MuonTraSachs.Single(x => x.SachId == sachId);
+            return View();
         }
     }
 }

@@ -9,10 +9,11 @@ namespace OA.Service.Interface
     public interface IDocGiaService
     {
         IEnumerable<DocGia> GetAll();
-        DocGia GetUser(int id);
+        DocGia GetDocGia(int id);
         void InsertDocGia(CreateDocGiaModel model);
         void UpdateDocGia(DocGia docGia);
         void DeleteDocGia(int id);
         bool CheckQuyDinh(int tuoi);
+        void TraSach(int id);
     }
 }

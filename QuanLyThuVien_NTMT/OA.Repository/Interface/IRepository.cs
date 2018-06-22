@@ -18,5 +18,6 @@ namespace OA.Repository.Interface
         void SaveChanges();
         IQueryable<T> Include(params Expression<Func<T, object>>[] includeProperties);
         T GetSingle();
+        void Update(T entity, params Expression<Func<T, object>>[] changedProperties);
     }
 }
