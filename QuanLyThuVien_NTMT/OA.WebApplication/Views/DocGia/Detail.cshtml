@@ -1,0 +1,52 @@
+﻿@model OA.Data.Model.DocGia
+@{
+    Layout = "~/Views/Shared/_myLayout.cshtml";
+}
+
+<div class="col-md-6">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">Thông tin chi tiết</h3>
+
+        </div>
+       
+        <table class="table table-hover" id="dev-table">
+            <thead>
+                <tr>
+                    <th class="text-success">Ngày mượn</th>
+                    <th class="text-success">Sách đang mượn</th>
+                    <th class="text-success">Ngày mượn</th>
+                    <th class="text-success">Trễ</th>
+                    <th class="text-success">Thao tác</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var i in Model.MuonTraSachs)
+                {
+                    if (i.NgayMuon.AddDays(5) < DateTime.UtcNow)
+                    {
+                        <tr>
+                            <td class="bg-danger">@i.NgayMuon.ToShortDateString()</td>
+                            <td class="bg-danger">@i.Sach.Tensach</td>
+                            <td class="bg-danger">@i.NgayMuon.ToString("dd-MM-yyyy")</td>
+                            <td class="bg-danger">Trễ</td>
+                            <td> @Html.ActionLink("Trả sách", "GiveBook", "Sach", new { id = @i.Id }) |</td>
+                        </tr>
+                    }
+                    else
+                    {
+                        <tr>
+                            <td></td>
+                            <td class="text-info">@i.Sach.Tensach</td>
+                            <td class="text-primary">@i.NgayMuon.ToString("dd-MM-yyyy")</td>
+                            <td class="text-success">Không</td>
+                            <td> @Html.ActionLink("Trả sách", "GiveBook", "Sach", new { id = @i.Id }) |</td>
+                        </tr>
+                    }
+
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
