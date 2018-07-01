@@ -15,5 +15,6 @@ namespace OA.Service.Interface
         void DeleteDocGia(int id);
         bool CheckQuyDinh(int tuoi);
         void TraSach(int id);
+        void GiaHanThe(int id,GiaHanTheModel model);
     }
 }

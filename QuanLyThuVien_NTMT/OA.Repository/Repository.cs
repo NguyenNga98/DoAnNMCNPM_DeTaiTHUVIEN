@@ -39,7 +39,23 @@ namespace OA.Repository
             entities.Add(entity);
             _context.SaveChanges();
         }
+        public void Update(T entity, params string[] changedProperties)
+        {
+            TryAttach(entity);
 
+            changedProperties = changedProperties?.Distinct().ToArray();
+
+            if (changedProperties?.Any() == true)
+            {
+                foreach (var property in changedProperties)
+                {
+                    _context.Entry(entity).Property(property).IsModified = true;
+                }
+            }
+            else
+                _context.Entry(entity).State = EntityState.Modified;
+            _context.SaveChanges();
+        }
         public void Update(T entity)
         {
             if (entity == null)
@@ -98,6 +114,20 @@ namespace OA.Repository
             else
                 _context.Entry(entity).State = EntityState.Modified;
             _context.SaveChanges();
+        }
+        protected void TryAttach(T entity)
+        {
+            try
+            {
+                if (_context.Entry(entity).State == EntityState.Detached)
+                {
+                    _context.Attach(entity);
+                }
+            }
+            catch
+            {
+                // ignored
+            }
         }
     }
 

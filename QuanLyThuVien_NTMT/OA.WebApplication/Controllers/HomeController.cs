@@ -12,7 +12,9 @@ namespace OA.WebApplication.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+
+            return RedirectToAction("Index","Sach");
+
         }
 
         public IActionResult About()

@@ -31,8 +31,8 @@ namespace OA.WebApplication.Controllers
         [HttpPost]
         public IActionResult Create(CreateDocGiaModel model)
         {
-           
-            if(ModelState.IsValid)
+
+            if (ModelState.IsValid)
             {
                 int tuoi = DateTime.Now.Year - model.NgaySinh.Year;
                 bool checkTuoi = _docGiaService.CheckQuyDinh(tuoi);
@@ -43,7 +43,7 @@ namespace OA.WebApplication.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("","Tuổi không hợp lệ");
+                    ModelState.AddModelError("", "Tuổi không hợp lệ");
                 }
             }
             return View(model);
@@ -55,9 +55,9 @@ namespace OA.WebApplication.Controllers
             var docGia = listDocGia.FirstOrDefault(x => x.Id == id);
             if (docGia == null)
             {
-                return RedirectToAction("Index","Docgia");
+                return RedirectToAction("Index", "Docgia");
             }
-         //   var sach = docGia.MuonTraSachs.Single(x => x.SachId == sachId);
+            //   var sach = docGia.MuonTraSachs.Single(x => x.SachId == sachId);
             return View(docGia);
         }
         [HttpPost]
@@ -69,11 +69,35 @@ namespace OA.WebApplication.Controllers
                 _sachService.GetById(i.SachId);
             }
             ViewData["LoaiDocGiaId"] = new SelectList(a, "Id", "SachId");
-       //     var listDocGia = _docGiaService.GetAll();
-      
-            
+            //     var listDocGia = _docGiaService.GetAll();
+
+
             //   var sach = docGia.MuonTraSachs.Single(x => x.SachId == sachId);
             return View();
+        }
+        public IActionResult GiaHanThe(int? id)
+        {
+            if (id == null)
+            {
+                return Redirect("Index");
+            }
+            var docGia = _docGiaService.GetDocGia(id.Value);
+            if (docGia == null)
+            {
+                return RedirectToAction("Index", "Sach");
+            }
+
+            return View();
+        }
+        [HttpPost]
+        public IActionResult GiaHanThe(int id,GiaHanTheModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                _docGiaService.GiaHanThe(id,model);
+                return Redirect("Index");
+            }
+            return View(model);
         }
     }
 }

@@ -20,7 +20,20 @@ namespace OA.WebApplication.Controllers
             var listSach = _sachService.GetAll();
             return View(listSach);
         }
-
+        public IActionResult ThemTheLoai()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult ThemTheLoai(TheLoaiModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                _theLoaiService.ThemTheLoai(model);
+                return Redirect("Index");
+            }
+            return View(model);
+        }
         public IActionResult Create()
         {
             ViewData["TheLoaiId"] = new SelectList(_theLoaiService.GetAll(), "Id", "TenTheLoai");
@@ -46,6 +59,10 @@ namespace OA.WebApplication.Controllers
             }
             var sach = _sachService.GetById(id.Value);
             if (sach == null)
+            {
+                return RedirectToAction("Index", "Sach");
+            }
+            if(sach.TinhTrang == false)
             {
                 return RedirectToAction("Index", "Sach");
             }

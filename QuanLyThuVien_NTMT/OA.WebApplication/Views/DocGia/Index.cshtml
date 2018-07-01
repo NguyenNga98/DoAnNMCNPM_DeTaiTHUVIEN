@@ -46,10 +46,12 @@
                         <td>@item.SoSachDangMuon</td>
                         <td>
                             <i>@Html.ActionLink("Trả sách", "Detail", "DocGia", new { id = @item.Id }) </i> |
+                            <i>@Html.ActionLink("Gia hạn", "GiaHanThe", "DocGia", new { id = @item.Id })</i>
                             <i class="glyphicon glyphicon-edit"></i>
                             |
                             <i class="fa fa-trash"></i>
                         </td>
+
                        
                     </tr>
                 }

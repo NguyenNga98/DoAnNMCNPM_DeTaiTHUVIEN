@@ -24,4 +24,8 @@ namespace Cross.ViewModel
         public DateTime NgayLapThe { get; set; }
         public int LoaiDocGiaId { get; set; }
     }
+    public class GiaHanTheModel
+    {
+        public int SoThangGiaHan { get; set; }
+    }
 }

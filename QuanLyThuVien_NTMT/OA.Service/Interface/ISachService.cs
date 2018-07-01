@@ -14,5 +14,6 @@ namespace OA.Service.Interface
         Sach GetById(int id);
         void TraSach(int id);
         bool CheckSoSach(int id);
+        void ThemTheLoai(TheLoaiModel model);
     }
 }

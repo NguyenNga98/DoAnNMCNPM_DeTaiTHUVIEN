@@ -20,7 +20,8 @@ namespace OA.Service
         }
         public void DeleteDocGia(int id)
         {
-            throw new NotImplementedException();
+            var docGia = _repository.Get(id);
+            _repository.Delete(docGia);
         }
 
         public IEnumerable<DocGia> GetAll()
@@ -53,7 +54,13 @@ namespace OA.Service
         {
             throw new NotImplementedException();
         }
+        public void GiaHanThe(int id,GiaHanTheModel model)
+        {
+            var docGia = _repository.Get(id);
+            docGia.NgayHetHan = docGia.NgayHetHan.AddMonths(model.SoThangGiaHan);
+            _repository.Update(docGia, x => x.NgayHetHan);
 
+        }
         public void TraSach(int id)
         {
             var muonTraSach = _muonTraSachRepository.Get(id);

@@ -13,13 +13,19 @@ namespace OA.Service
         private readonly IRepository<MuonTraSach> _muonTraSachRepository;
         private readonly IDocGiaRepository _docGiaRepository;
         private readonly IRepository<QuyDinhMuonSach> _quyDinhMuonRepository;
+        private readonly IRepository<TheLoai> _theloaiRepository;
 
-        public SachService(IRepository<Sach> sachRepository, IRepository<MuonTraSach> muonTraSachRepository, IDocGiaRepository docGiaRepository, IRepository<QuyDinhMuonSach> quyDinhMuonRepository)
+        public SachService(IRepository<Sach> sachRepository,
+            IRepository<MuonTraSach> muonTraSachRepository,
+            IDocGiaRepository docGiaRepository,
+            IRepository<QuyDinhMuonSach> quyDinhMuonRepository,
+            IRepository<TheLoai> theLoaiRepo)
         {
             _sachRepository = sachRepository;
             _muonTraSachRepository = muonTraSachRepository;
             _docGiaRepository = docGiaRepository;
             _quyDinhMuonRepository = quyDinhMuonRepository;
+            _theloaiRepository = theLoaiRepo;
         }
 
         public void ThemSach(SachModel model)
@@ -89,7 +95,11 @@ namespace OA.Service
             _docGiaRepository.Update(docGia,x=>x.SoSachDangMuon);
             _sachRepository.Update(sach,x=>x.TinhTrang);
         }
-
+        public void ThemTheLoai(TheLoaiModel model)
+        {
+            var theLoai = new TheLoai() { TenTheLoai = model.TenTheLoai };
+            _theloaiRepository.Insert(theLoai);
+        }
         public bool CheckSoSach(int id)
         {
             var docGia = _docGiaRepository.Get(id);
